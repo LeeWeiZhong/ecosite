@@ -13,23 +13,23 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <script type="text/javascript">
-        function test()
-        {
-            Email.send
-            ({
-                Host: "smtp.gmail.com",
-                Username: "ecositenewsletter@gmail.com",
-                Password: "(8F*Ep8rh94$",
-                To: "s10205556@connect.np.edu.sg",
-                From: "ecositenewsletter@gmail.com",
-                Subject: "Attempt #7",
-                Body: "Do you want me to switch to EmailJS? If I do that, I can hide the username and password. However, if you want to attach a PDF file to it, a $4 monthly subscription is needed."
-                // Body: "If you receive this email, do let me know. \n https://drive.google.com/file/d/1W1L4QG_IArGhIH_yG9ouLTwUZd8HnhC6/view?usp=sharing"
-            }).then
-            (
-                message => alert(message)
-            );
-        }
+        // function test()
+        // {
+        //     Email.send
+        //     ({
+        //         Host: "smtp.gmail.com",
+        //         Username: "ecositenewsletter@gmail.com",
+        //         Password: "(8F*Ep8rh94$",
+        //         To: "s10205556@connect.np.edu.sg",
+        //         From: "ecositenewsletter@gmail.com",
+        //         Subject: "Attempt #7",
+        //         Body: "Do you want me to switch to EmailJS? If I do that, I can hide the username and password. However, if you want to attach a PDF file to it, a $4 monthly subscription is needed."
+        //         // Body: "If you receive this email, do let me know. \n https://drive.google.com/file/d/1W1L4QG_IArGhIH_yG9ouLTwUZd8HnhC6/view?usp=sharing"
+        //     }).then
+        //     (
+        //         message => alert(message)
+        //     );
+        // }
 
         // Email.send({
         //         SecureToken: "C973D7AD-F097-4B95-91F4-40ABC5567812",
@@ -120,7 +120,7 @@
 
             <a class="contactUs-icons" href="#"><img class="contactUs-icons-image" src="images/facebook-icon.png"></a>
 
-            <a class="contactUs-icons" onclick="test()"><img class="contactUs-icons-image" src="images/envelope-icon.png"></a>
+            <a class="contactUs-icons" onclick="sendEmail()"><img class="contactUs-icons-image" src="images/envelope-icon.png"></a>
 
             <!-- <a class="contactUs-icons" onclick="sendEmail()"><img class="contactUs-icons-image" src="images/envelope-icon.png"></a> -->
         </section>

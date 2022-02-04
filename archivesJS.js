@@ -26,6 +26,24 @@ document.addEventListener("DOMContentLoaded", () =>
       output(input);
     }
   });
+
+  const searchButton = document.querySelector(".article-inputButton");
+
+  searchButton.addEventListener("click", clickDetector);
+
+  // Detect user pressing button.
+  function clickDetector() {
+    // Clear results box (This includes title)
+    resultsDiv.innerHTML = "";
+
+    // Get user input from <input> in EcoChat.html once Enter is pressed
+    let input = document.getElementById("search-article").value;
+
+    //clear input value
+    document.getElementById("search-article").value = "";
+
+    output(input);
+  };
 });
 
 function output(input) 

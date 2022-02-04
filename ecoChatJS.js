@@ -344,7 +344,7 @@ const reply =
   ["Perhaps you could learn more about the topic you're interested in by emailing us at <a href = 'emailto:ecositee@gmail.com'> ecositee@gmail.com"],
 
   //4
-  ["You can type in: unsustainable, non environmentally friendly, sustainable, eco friendly, environmentally friendly, alternative choices, alternate choices, alternative options, alternate options, why, reason, Levi's, UNIQLO, Zalora, Adidas, Timberland, H&M, Nike, Gucci, CamelBak, Shein, Victoria's Secret, Mango, Fila, Underarmour, Lululemon, Cotton On, Louis, Hermes"]
+  ["You can type in: unsustainable, non environmentally friendly, sustainable, eco friendly, environmentally friendly, alternative choices, alternate choices, alternative options, alternate options, why, reason, Levi's, UNIQLO, Zalora, Adidas, Timberland, H&M, Nike, Gucci, CamelBak, Shein, Victoria's Secret, Mango, Fila, Underarmour, Lululemon, Cotton On, Louis, Hermes"],
 
   //5
   ["Shein: <br> Although Shein has a social responsibility website to show the company\'s commitments to giving back to society. There have been no forms of third-party certification to verify that Shein has been genuinely contributing to becoming more sustainable environmentally and in other aspects. <br> Shein has been shown to sell their clothes at relatively lower prices compared to other fashion companies and has a fast turnaround time due to their transportation of their goods via airplanes which consumes large amount of fossil fuels, thus having a larger carbon footprint.In addition, there is no evidence to show that Shein pays their factory workers a proper wage which allows the company to operate with low overhead costs.This allows for the company to sell their products at such low prices. (Rating: 3/5) <br> <a href='https://www.greenmatters.com/p/is-shein-bad'> Find out more here. </a>"],
@@ -482,6 +482,9 @@ alternative =
 
 function compare(triggerArray, replyArray, text) 
 {
+  // console.log(triggerArray.length);
+  // console.log(replyArray.length);
+
   let item;
 
   const textSplit = text.split(" ");
@@ -493,6 +496,10 @@ function compare(triggerArray, replyArray, text)
       {
         if (triggerArray[x][y] == textSplit[z])
         {
+          console.log(x);
+          console.log(triggerArray[x].length);
+          console.log(replyArray[x].length);
+          // respective response to respective trigger
           if (triggerArray[x].length == replyArray[x].length)
           {
             item = replyArray[x][y];
@@ -509,3 +516,4 @@ function compare(triggerArray, replyArray, text)
   }
   return item;
 }
+

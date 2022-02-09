@@ -11,6 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+
+        emailBody =  
+            "Hello there, <br> <br>" +
+            "&emsp; Thank you for signing up for Ecosite's newsletter! You can view it <a href = 'https://drive.google.com/file/d/1W1L4QG_IArGhIH_yG9ouLTwUZd8HnhC6/view?usp=sharing'>here</a>. <br> <br>" +
+            "From Ecosite Team"
+        emailsubject = "Thank you for signing up for EcoSite Newsletter!"
+
         function sendEmail()
         {
             var email = document.getElementById("newsletter-popup-input").value;
@@ -23,19 +47,23 @@
                     Password: "(8F*Ep8rh94$",
                     To: email,
                     From: "ecositenewsletter@gmail.com",
-                    Subject: "Attempt #8",
-                    Body: "<h1>dwdw</h1>",
+                    Subject: emailsubject,
+                    Body: emailBody,
                 }
             ).then
             (
-                message => alert(message)
+                message => result
             );
-           
+
+            if (result = "OK")
+            {
+                document.getElementById("newsletter-popup-description").innerHTML = "Please check " + email + "'s inbox"
+            }
         }
     </script>
 </head>
 
-<body id="articles-body" class="main-body">
+<body id="articles-body" class="main-body" oncontextmenu="return false">
     <header class="top-bar">
         <h1 class="main-title">
             ECOSITE

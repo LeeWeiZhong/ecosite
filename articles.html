@@ -9,6 +9,30 @@
 
     <link href="http://fonts.cdnfonts.com/css/bookman-old-style" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail()
+        {
+            var email = document.getElementById("newsletter-popup-input").value;
+            // var email = document.getElementByName("email-input").value;
+            Email.send
+            (
+                {
+                    Host: "smtp.gmail.com",
+                    Username: "ecositenewsletter@gmail.com",
+                    Password: "(8F*Ep8rh94$",
+                    To: email,
+                    From: "ecositenewsletter@gmail.com",
+                    Subject: "Attempt #8",
+                    Body: "<h1>dwdw</h1>",
+                }
+            ).then
+            (
+                message => alert(message)
+            );
+           
+        }
+    </script>
 </head>
 
 <body id="articles-body" class="main-body">
@@ -58,8 +82,8 @@
         <button id="newsletter-popup-close-button">X</button>
         <h1 id="newsletter-popup-title">Articles and latest news on Sustainability | monthly discount coupons to sustainable businesses</h1>
         <h2 id="newsletter-popup-description">Sign up for out monthly newsletters to receive our articles earlier!</h2>
-        <input id="newsletter-popup-input" type="text" placeholder="Enter your email here" autocomplete="off" />
-        <button id="newsletter-popup-submit-button">Submit</button>
+            <input id="newsletter-popup-input" name = "email-input" type="email" placeholder="Enter your email here" autocomplete="off" />
+            <button id="newsletter-popup-submit-button" onclick="sendEmail()">Submit</button>
     </section>
 </body>
 </html>
